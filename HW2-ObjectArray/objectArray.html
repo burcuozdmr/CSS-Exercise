@@ -8,30 +8,6 @@
 
   <body></body>
   <script>
-    var user = {
-      name: "Çağatay",
-      surname: "Yıldız",
-      age: 18,
-    };
-
-    var users = [
-      {
-        name: "Çağatay",
-        surname: "Yıldız",
-        age: 18,
-      },
-      {
-        name: "Müge",
-        surname: "Çalışkan",
-        age: 22,
-      },
-      {
-        name: "Aykut",
-        surname: "Arslan",
-        age: 18,
-      },
-    ];
-
     var products = [
       {
         id: 4,
@@ -1000,68 +976,79 @@
     //1-fiyatı 30 ile 100 arasında kaç adet ürün var?
     let productList = [];
     products.forEach((product) => {
-      if (product.unitPrice > 30 && product.unitPrice < 100){
+      if (product.unitPrice > 30 && product.unitPrice < 100) {
         productList.push(product);
       }
     });
-    console.log('Number of products with prices between 30 and 100:',productList.length);
+    console.log(
+      "Number of products with prices between 30 and 100:",
+      productList.length
+    );
 
     //2-ismi a harfi ile başlayan ürünleri console a yazdır
     let startWithAProducts = [];
     products.forEach((product) => {
       let title = product.name.toLowerCase();
-      if (title[0] === 'a'){
+      if (title[0] === "a") {
         startWithAProducts.push(title);
       }
     });
-    console.log('Names of products starting with the letter a:',startWithAProducts);
-    
+    console.log(
+      "Names of products starting with the letter a:",
+      startWithAProducts
+    );
+
     //3-ismi a harfi ile BİTEN ürünleri console a yazdır
     let endWithAProducts = [];
     products.forEach((product) => {
       let title = product.name.toLowerCase();
-      if (title[title.length -1] === 'a'){
+      if (title[title.length - 1] === "a") {
         endWithAProducts.push(title);
       }
     });
-    console.log('Names of products ending with the letter a:',endWithAProducts);
+    console.log(
+      "Names of products ending with the letter a:",
+      endWithAProducts
+    );
 
     //4- id si 10 olan ürünün adını console a yazdır
     products.forEach((product) => {
-      if (product.id === 10){
-        console.log('The name of the product with id: 10 :',product.name);
+      if (product.id === 10) {
+        console.log("The name of the product with id: 10 :", product.name);
       }
     });
 
     //5-discontinued false olan kaç ürün var
-    let discontinuedFalseProducts = []
+    let discontinuedFalseProducts = [];
     products.forEach((product) => {
-      if (!product.discontinued){
+      if (!product.discontinued) {
         discontinuedFalseProducts.push(product);
       }
     });
-    console.log('Number of products with discontinued value false:',discontinuedFalseProducts.length);
+    console.log(
+      "Number of products with discontinued value false:",
+      discontinuedFalseProducts.length
+    );
 
     //6- en pahalı ürünün adını console a yazdır
     let highestPrice = 0;
-    let mostExpensiveProduct = '';
+    let mostExpensiveProduct = "";
     products.forEach((product) => {
-      if(product.unitPrice > highestPrice){
+      if (product.unitPrice > highestPrice) {
         highestPrice = product.unitPrice;
         mostExpensiveProduct = product.name;
       }
     });
-    console.log('The Most Expensive Product Name:', mostExpensiveProduct);
-    
+    console.log("The Most Expensive Product Name:", mostExpensiveProduct);
+
     //7-en ucuz ürünün adını console a yazdır
 
     let cheapestProduct = products[0];
     products.forEach((product) => {
-      if(product.unitPrice < cheapestProduct.unitPrice){
+      if (product.unitPrice < cheapestProduct.unitPrice) {
         cheapestProduct = product;
       }
     });
-    console.log('The Cheapest Product Name:', cheapestProduct.name);
-
+    console.log("The Cheapest Product Name:", cheapestProduct.name);
   </script>
 </html>
